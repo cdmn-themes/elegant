@@ -110,59 +110,65 @@
 <div class="bg-#f8f6f7">
   <section class="flex py-24 container mx-auto">
     <h3 class="mb-20 tracking-4px">
-      THE AUSSENALSTER - EXPERIENCE OF A LIFETIME
+      EXPERIENCE OF A LIFETIME
     </h3>
 
     <div class="grid grid-cols-2 container gap-8">
       <Scrolltool let:progress>
         
-        <img src={"/dummy/tide/Lage_1.jpg"} class="object-cover w-full " alt="">
-        <img src={"/dummy/tide/Lage_2.jpg"} class="object-cover w-full " alt="">
+        <img src={"https://cms.cdmn.de/api/attachments/620"} class="object-cover w-full " alt="">
+        <div class="flex gap-4 w-full relative">
+          <img src={"https://cms.cdmn.de/api/attachments/619"} class="object-cover w-full " alt="">
+          <!-- <img src={"https://cms.cdmn.de/api/attachments/623"} class="w-full object-cover" alt=""> -->
+
+        </div>
+        
       </Scrolltool>
     </div>
   </section>
 
-<section id="ut_google_map_6386cc43e8131" class="h-160">
 
-  
-  <!-- <img src={"/dummy/tide/map.jpg"} class="object-cover w-full object-center" alt=""> -->
-</section>
+  <section>
+    <img src="https://cms.cdmn.de/api/attachments/595" alt="" class="w-full">
+  </section>
+
+<!-- <section id="ut_google_map_6386cc43e8131" class="h-160"></section> -->
 
 <section class="container mx-auto mt-32">
   <div class="mt-20 text-center">
-    <h2 class="text-size-38px font-normal mb-12">Designer Apartments</h2>
+    <h2 class="text-size-38px font-normal mb-12">Style & Interior</h2>
     <p class="leading-6 opacity-80">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
   </div>
   <div class="md:grid grid-cols-4 gap-6 mt-12 pb-12">
   <div class="text-center mb-12 mb-12">
-    <img src={"/dummy/tide/Bild_1.jpg"} class="object-cover w-full " alt="">
-    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">UK - SOUL</div>
-    <div class="style mt-3 text-size-5.5">Design Style One</div>
-    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
-    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">Pick</div>
+    <img src={"https://cms.cdmn.de/api/attachments/577"} class="object-cover w-full aspect-square " alt="">
+    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Interior</div>
+    <div class="style mt-3 text-size-5.5">Design Parkvillen</div>
+    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Premium Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
+    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">KONTAKT</div>
   </div>
   <div class="text-center mb-12">
-    <img src={"/dummy/tide/Bild_2.jpg"} class="object-cover w-full " alt="">
-    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Theuerkauf Home</div>
-    <div class="style mt-3 text-size-5.5">Design Style Two</div>
-    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
-    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">Pick</div>
+    <img src={"https://cms.cdmn.de/api/attachments/576"} class="object-cover w-full aspect-square " alt="">
+    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Interior</div>
+    <div class="style mt-3 text-size-5.5">Design Sophienpalais</div>
+    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Premium Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
+    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">KONTAKT</div>
   </div>
   <div class="text-center mb-12">
-    <img src={"/dummy/tide/Bild_3.jpg"} class="object-cover w-full " alt="">
-    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Piet Boon</div>
-    <div class="style mt-3 text-size-5.5">Design Style Three</div>
-    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
-    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">Pick</div>
+    <img src={"/dummy/tide/Bild_3.jpg"} class="object-cover w-full aspect-square " alt="">
+    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Interior</div>
+    <div class="style mt-3 text-size-5.5">Design Townhouses</div>
+    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Premium Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
+    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">KONTAKT</div>
   </div>
   <div class="text-center mb-12">
-    <img src={"/dummy/tide/Bild_4.jpg"} class="object-cover w-full " alt="">
-    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">CDMN-STUDIOS</div>
-    <div class="style mt-3 text-size-5.5">Design Style Four</div>
-    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
-    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">Pick</div>
+    <img src={"/dummy/tide/Bild_4.jpg"} class="object-cover w-full aspect-square " alt="">
+    <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Interior</div>
+    <div class="style mt-3 text-size-5.5">Design Alstervillen</div>
+    <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Premium Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
+    <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">KONTAKT</div>
   </div>
 </div>
 </section>

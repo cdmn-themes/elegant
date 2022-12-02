@@ -3,7 +3,7 @@
   import Burger from '$lib/burger.svelte'
 
   import { fade, slide } from 'svelte/transition'
-
+  import { afterNavigate, goto } from '$app/navigation'
   export let data
 
   let navShown
@@ -15,8 +15,10 @@
     oldScrollY = scrollY
   }
   
-  
-    // transitioning = false
+  afterNavigate(function() {
+    transitioning = false
+    console.log('bla')
+  })
   
 
   function transition(ev) {
@@ -29,9 +31,13 @@
       transitioning = true
       setTimeout(function() {
         console.log(href)
-        if (href.includes(document.location.host)) Inertia.visit(href)
-        else window.location.href = href
-      }, 600)
+        // if (href.includes(document.location.host)) goto(href)
+        // else {
+          // window.location = href
+          transitioning = false
+          scrollY = 0
+        // }
+      }, 900)
     }
   }
   let formOpen = false
@@ -42,7 +48,7 @@
 <svelte:body on:click={transition} />
 
 {#if transitioning}
-  <div in:fade={{duration:600}} class="fixed w-full h-screen bg-white z-200" />
+  <div transition:fade={{duration:800}} class="fixed w-full h-screen bg-white z-200" />
 {/if}
 
 {#if formOpen}

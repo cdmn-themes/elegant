@@ -32,7 +32,8 @@
               {activeProject.description}
             </p>
           </div>
-          <a href="project?project={projects.indexOf(activeProject)}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Explore</a>
+          <!-- <a href="project?project={projects.indexOf(activeProject)}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Explore</a> -->
+          <a href="/" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Explore</a>
         </div>
         <div class="col-span-7 h-full overflow-hidden">
           <Preload src="API_URL/attachments/{activeProject.image}?w=600" let:src>
