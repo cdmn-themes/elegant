@@ -51,10 +51,10 @@
   <div transition:slide={{duration:600}}  class="mt-7 bg-#f8f6f7 shadow-lg dark:bg-gray-800 dark:border-gray-700">
     <div class="p-12 md:px-24">
       <div class="text-center">
-        <img src="API_URL/attachments/{data.logo}?raw" alt="{data.title}" class="w-30 invert mb-5" />
+        <img src="API_URL/attachments/{data.site.content.logo}?raw" alt="{data.site.content.title}" class="w-30 mb-5" />
         <!-- <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Join the Tide</h1> -->
         <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          Get in touch and experience the sound of Hamburg
+          Get in touch and experience Sophienterrassen Hamburg
         </p>
       </div>
 
@@ -77,14 +77,14 @@
 {/if}
 
 <nav class:navShown class="text-center" class:top={scrollY == 0}>
-  <div class="burger p-5 md:p-10 absolute">
+  <div class="burger p-5 md:p-8 absolute">
     <Burger {open} on:click={() => open = !open}/>
   </div>
   <a href="" class="brand">
-    <img src="API_URL/attachments/{data.site.content.logo}?raw" alt="" class="p-4 h-20 md:p-8 md:h-32">
+    <img src="API_URL/attachments/{data.site.content.logo}?raw" alt="" class="p-4 h-16 md:p-8 md:h-26">
   </a>
-  <a class="button bordered right-4 top-4 md:right-10 md:top-10 absolute" on:click={() => formOpen = true}>
-    RESERVE
+  <a class="button bordered right-4 top-4 md:right-7 md:top-7 absolute" on:click={() => formOpen = true}>
+    CONTACT
   </a>
 </nav>
 
@@ -143,7 +143,7 @@ nav img {
   filter: invert(0);
 }
 nav.top img {
-  filter: invert(1);
+  filter: invert(1) brightness(2);
 }
 nav .button {
   transition: all 0.5s ease-in-out;

@@ -26,20 +26,30 @@
   }
 </script>
 
-<video on:ended={reset} class="object-cover h-screen w-full absolute bg-dark" preload="auto" playsinline="" autoplay="autoplay" muted loop="loop" >
-  <source type="video/mp4" src="API_URL/attachments/{data.video}?raw">
+<div class="absolute w-full h-screen">
+
+
+<video on:ended={reset} poster="API_URL/attachments/{data.site.content.video}?raw" class="object-cover h-screen w-full absolute bg-dark" preload="auto" playsinline="" autoplay="autoplay" muted loop="loop" >
+  <source type="video/mp4" src="API_URL/attachments/{data.site.content.video}?raw">
 </video>
+<div class="absolute w-full h-full bg-black/30"></div>
+<div class="absolute bg-gradient-to-t from-transparent to-black/60 h-50 w-full">
+
+</div>
+</div>
+
+
 
 <section class="flex h-screen relative text-center text-white">
-  <div class="h-1/2.5 relative"></div>
+  <div class="h-1/6 relative"></div>
   {#if !fullvid}
   
   <div class="uppercase tracking-widest" in:fly={{y: 80, duration: 1200, delay: 200}}>
-    A Journey of Passion
+    Experience the very special
   </div>
   
   <div class="px-2 text-size-10 md:text-size-18" in:fly={{y: 80, duration: 1200, delay: 400}}>
-    Sound of Hamburg
+    Sophienterrassen
   </div>
   <a on:click={full} class="button mt-12 bordered" in:fly={{y: 80, duration: 1200, delay: 600}}>
     <span class="i-clarity-volume-up-line text-size-6 align-middle relative -pb-3px -top-2px h-6"></span> Play full video
@@ -55,7 +65,7 @@
 
 <section class="text-center py-26 text-size-20px md:text-size-37px tracking-wide leading-1.6em lg:text-size-40px">
   <p class="mb-8 mx-8">
-    Enjoy a private audience with nature,<br>slowing the rhythm of life down to your perfect beat.
+    Enjoy a quality lifestyle, an audience with nature.<br>Slowing the rhythm of life down to your perfect beat.
   </p>
 </section>
 
@@ -64,7 +74,7 @@
 <div class="bg-#f8f6f7">
   <section class="flex py-24 container mx-auto">
     <h3 class="mb-20 tracking-4px">
-      ADVENTURES OF A LIFETIME
+      THE AUSSENALSTER - EXPERIENCE OF A LIFETIME
     </h3>
 
     <div class="grid grid-cols-2 container gap-8">
