@@ -7,8 +7,12 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 		%sveltekit.head%
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEmTo04OsXvBM3y0nBits8YYGtbhBPch8&amp;callback=ut_init_maps"></script>
+		
 	</head>
 	<body>
 		<div id="app">%sveltekit.body%</div>
+		<script> function ut_init_maps() { if (typeof map_callback_6386cc43e8144 !== "undefined" && typeof map_callback_6386cc43e8144 === "function") { map_callback_6386cc43e8144(); } }</script>
 	</body>
 </html>

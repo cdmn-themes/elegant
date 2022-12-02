@@ -2,6 +2,7 @@
   import { fly } from 'svelte/transition'
   import FeaturedSections from '$lib/_featured_sections.svelte';
     import Scrolltool from '../../lib/scrolltool.svelte';
+    import { onMount } from 'svelte';
 
   export let data
 
@@ -16,6 +17,41 @@
       vid.loop = false
     }
   }
+
+  onMount(function() {
+    
+					
+										
+    var address = '53.575733, 9.997154';
+  
+    var map = new google.maps.Map(document.getElementById('ut_google_map_6386cc43e8131'), {
+      
+      zoom:14									
+    });
+  
+    var geocoder = new google.maps.Geocoder();
+  
+    geocoder.geocode({
+      'address': address
+    }, 
+    function( results, status ) {
+
+      if(status == google.maps.GeocoderStatus.OK) {
+
+        new google.maps.Marker({
+          position: results[0].geometry.location,
+                            map: map
+        });
+
+        map.setCenter(results[0].geometry.location);
+
+      }
+      
+      });
+    
+              
+      
+  })
 
   function reset() {
     fullvid = false
@@ -86,15 +122,17 @@
     </div>
   </section>
 
-<section class="">
-  <img src={"/dummy/tide/map.jpg"} class="object-cover w-full object-center" alt="">
+<section id="ut_google_map_6386cc43e8131" class="h-160">
+
+  
+  <!-- <img src={"/dummy/tide/map.jpg"} class="object-cover w-full object-center" alt=""> -->
 </section>
 
 <section class="container mx-auto mt-32">
   <div class="mt-20 text-center">
-    <h2 class="text-size-38px font-normal mb-12">Experience the Design of Hamburg</h2>
+    <h2 class="text-size-38px font-normal mb-12">Designer Apartments</h2>
     <p class="leading-6 opacity-80">
-      Design of your lifetime. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     </p>
   </div>
   <div class="md:grid grid-cols-4 gap-6 mt-12 pb-12">
