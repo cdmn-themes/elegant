@@ -1,9 +1,8 @@
 <script>
-  import './theme.css'
-  import Burger from '~/shared/burger.svelte'
+  
+  import Burger from '$lib/burger.svelte'
 
   import { fade, slide } from 'svelte/transition'
-  import { Inertia } from '@inertiajs/inertia'
 
   export let data
 
@@ -16,9 +15,9 @@
     oldScrollY = scrollY
   }
   
-  Inertia.on('finish', function() {
-    transitioning = false
-  })
+  
+    // transitioning = false
+  
 
   function transition(ev) {
     if (ev.target.dataset.fslightbox) return
@@ -82,7 +81,7 @@
     <Burger {open} on:click={() => open = !open}/>
   </div>
   <a href="" class="brand">
-    <img src="API_URL/attachments/{data.logo}?raw" alt="" class="p-4 h-20 md:p-8 md:h-32">
+    <img src="API_URL/attachments/{data.site.content.logo}?raw" alt="" class="p-4 h-20 md:p-8 md:h-32">
   </a>
   <a class="button bordered right-4 top-4 md:right-10 md:top-10 absolute" on:click={() => formOpen = true}>
     RESERVE
@@ -141,10 +140,10 @@ nav.navShown {
 }
 nav img {
   transition: all 0.5s ease-in-out;
-  filter: invert(1);
+  filter: invert(0);
 }
 nav.top img {
-  filter: invert(0);
+  filter: invert(1);
 }
 nav .button {
   transition: all 0.5s ease-in-out;

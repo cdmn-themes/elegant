@@ -1,5 +1,5 @@
 <script>
-  import Preload from '~/shared/preload.svelte'
+  import Preload from '$lib/preload.svelte'
   import { fly, slide } from 'svelte/transition'
 
   export let projects
@@ -35,7 +35,7 @@
           <a href="project?project={projects.indexOf(activeProject)}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Explore</a>
         </div>
         <div class="col-span-7 h-full overflow-hidden">
-          <Preload src="/blobs/{activeProject.image}?w=600" let:src>
+          <Preload src="API_URL/attachments/{activeProject.image}?w=600" let:src>
             <img in:fly|local={{x: 40, duration: 1600}} {src} alt={activeProject.name} class="object-cover w-full h-full">  
           </Preload>
         </div>
@@ -59,7 +59,7 @@
       </div>
       {#if activeProject == project}
         <div in:slide|local={{duration: 1000}} out:slide|local={{duration: 500}}>
-          <img src="/blobs/{activeProject.image}?w=600" alt={activeProject.name} class="object-cover aspect-square w-full">  
+          <img src="API_URL/attachments/{activeProject.image}?w=600" alt={activeProject.name} class="object-cover aspect-square w-full">  
           <div class="text-left col-span-5 flex flex-col">
             <div class="md:py-24">
               <h4 class="tagline mb-6  mt-3 !text-size-9">
@@ -69,7 +69,7 @@
                 {project.description}
               </p>
             </div>
-            <a href="project?project={index}" class="button mb-8 bordered dark w-50%">Explore</a>
+            <a href="project?project={index}" class="button mb-8 bordered dark">Explore</a>
           </div>
         </div>  
       {/if}

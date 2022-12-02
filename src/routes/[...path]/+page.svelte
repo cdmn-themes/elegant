@@ -1,9 +1,10 @@
 <script>
   import { fly } from 'svelte/transition'
   import FeaturedSections from '$lib/_featured_sections.svelte';
+    import Scrolltool from '../../lib/scrolltool.svelte';
 
   export let data
-  
+
   let fullvid = false
   function full() {
     const vid = document.getElementsByTagName('video')[0];
@@ -58,7 +59,7 @@
   </p>
 </section>
 
-<FeaturedSections projects={data.projects} />
+<FeaturedSections projects={data.content.projects} />
 
 <div class="bg-#f8f6f7">
   <section class="flex py-24 container mx-auto">
@@ -67,13 +68,16 @@
     </h3>
 
     <div class="grid grid-cols-2 container gap-8">
-      <img src="/dummy/tide/Lage_1.jpg" class="object-cover w-full " alt="">
-      <img src="/dummy/tide/Lage_2.jpg" class="object-cover w-full " alt="">
+      <Scrolltool let:progress>
+        
+        <img src={"/dummy/tide/Lage_1.jpg"} class="object-cover w-full " alt="">
+        <img src={"/dummy/tide/Lage_2.jpg"} class="object-cover w-full " alt="">
+      </Scrolltool>
     </div>
   </section>
 
 <section class="">
-  <img src="/dummy/tide/map.jpg" class="object-cover w-full object-center" alt="">
+  <img src={"/dummy/tide/map.jpg"} class="object-cover w-full object-center" alt="">
 </section>
 
 <section class="container mx-auto mt-32">
@@ -85,28 +89,28 @@
   </div>
   <div class="md:grid grid-cols-4 gap-6 mt-12 pb-12">
   <div class="text-center mb-12 mb-12">
-    <img src="/dummy/tide/Bild_1.jpg" class="object-cover w-full " alt="">
+    <img src={"/dummy/tide/Bild_1.jpg"} class="object-cover w-full " alt="">
     <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">UK - SOUL</div>
     <div class="style mt-3 text-size-5.5">Design Style One</div>
     <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
     <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">Pick</div>
   </div>
   <div class="text-center mb-12">
-    <img src="/dummy/tide/Bild_2.jpg" class="object-cover w-full " alt="">
+    <img src={"/dummy/tide/Bild_2.jpg"} class="object-cover w-full " alt="">
     <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Theuerkauf Home</div>
     <div class="style mt-3 text-size-5.5">Design Style Two</div>
     <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
     <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">Pick</div>
   </div>
   <div class="text-center mb-12">
-    <img src="/dummy/tide/Bild_3.jpg" class="object-cover w-full " alt="">
+    <img src={"/dummy/tide/Bild_3.jpg"} class="object-cover w-full " alt="">
     <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">Piet Boon</div>
     <div class="style mt-3 text-size-5.5">Design Style Three</div>
     <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>
     <div class="inline-block mt-12 border-1 py-3 px-17 uppercase rounded text-size-3 hover:bg-black hover:text-white">Pick</div>
   </div>
   <div class="text-center mb-12">
-    <img src="/dummy/tide/Bild_4.jpg" class="object-cover w-full " alt="">
+    <img src={"/dummy/tide/Bild_4.jpg"} class="object-cover w-full " alt="">
     <div class="tagline uppercase tracking-3px text-size-2.5 mt-14">CDMN-STUDIOS</div>
     <div class="style mt-3 text-size-5.5">Design Style Four</div>
     <div class="desc leading-1.5em text-size-3 mx-5 mt-8 text-black/60">Experience Lorem ipsum dolor sit amet, consectetur adipiscing elit. Und so weiter.</div>

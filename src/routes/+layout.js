@@ -1,6 +1,6 @@
 import { error } from '@sveltejs/kit'
 
-export function load() {
+export function load({fetch}) {
   return fetch(`API_URL/site`, {
     headers: {
       'Authorization': `Bearer SITE_TOKEN`,

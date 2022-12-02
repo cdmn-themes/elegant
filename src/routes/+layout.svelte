@@ -3,6 +3,7 @@
   import 'virtual:uno.css'
   
   export let data
+  
 </script>
 
 <svelte:head>
