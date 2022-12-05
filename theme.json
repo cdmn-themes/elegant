@@ -7,20 +7,27 @@
     "favicon": "image",
     "logo": "image",
     "phone": "string",
-    "reservation_link": "string",
+    "email": "string",
+    "address": "string",
     "meta_description": "string",
     "meta_keywords": "string",
     "meta_image": "image"
   },
   "pages": {
-    "projects": {
-      "projects": {
-        "title": "string",
-        "tagline": "string",
-        "description": "text",
-        "datapoints": "html",
-        "image": "image"
-      }
+    "overview": {
+      "title": "string",
+      "description": "string",
+      "images": "images"
+    },
+    "project": {
+      "title": "string",
+      "category": "string",
+      "tagline": "string",
+      "description": "text",
+      "datapoints": "html",
+      "video": "video",
+      "images": "images",
+      "geo_location": "string"
     }
   }
 }

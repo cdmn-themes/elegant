@@ -105,11 +105,9 @@
   
   <div class="text-size-11px border-t border-black mt-2 mb-12 pt-3 md:flex">
     <div class="relative">
-      Platzhalterstrasse 123, 12345 Stadt, Tel: +49 1234-567890, E-Mail: <a href="info@ece.com">info@ece.com</a>
+      Platzhalterstrasse 123, 12345 Stadt, Tel: +49 1234-567890, E-Mail: 
     </div>
-    <div class="text-right grow">
-      &copy; 2022 ECE
-    </div>
+  
   </div>
 
 </footer>

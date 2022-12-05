@@ -105,7 +105,7 @@
   </p>
 </section>
 
-<FeaturedSections projects={data.content.projects} />
+<FeaturedSections projects={data.children} />
 
 <div class="bg-#f8f6f7">
   <section class="flex py-24 container mx-auto">
