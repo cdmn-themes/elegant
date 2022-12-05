@@ -1,6 +1,6 @@
 <script>
   import { fly } from 'svelte/transition'
-  import FeaturedSections from '$lib/_featured_sections.svelte';
+  import ChildPages from '$lib/child_pages.svelte';
     import Scrolltool from '../../lib/scrolltool.svelte';
     import { onMount } from 'svelte';
 
@@ -105,7 +105,7 @@
   </p>
 </section>
 
-<FeaturedSections projects={data.children} />
+<ChildPages children={data.children} />
 
 <div class="bg-#f8f6f7">
   <section class="flex py-24 container mx-auto">
@@ -176,7 +176,7 @@
 <section class="flex py-36 text-center">
   <img src="API_URL/attachments/{data.logo}?raw" class="invert w-30" alt="">
   <h3 class="mt-12 mb-8 tracking-4px">
-    COPYRIGHT &copy; 2022 ECE
+    COPYRIGHT &copy; 2022 Frankonia Eurobau GmbH
   </h3>
   <div class="grid grid-cols-4">
     <div class="w-28 cursor-pointer transition-all hover:tracking-3px">Twitter</div>
