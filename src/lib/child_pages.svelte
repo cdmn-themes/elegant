@@ -4,7 +4,7 @@
 
   export let children
   let projectEls = []
-  let activeChild = children[0]
+  $: activeChild = children[0]
 </script>
 
 <section class="pb-26 container mx-auto hidden md:flex">
@@ -33,8 +33,8 @@
               {activeChild.content.description}
             </p>
           </div>
-          <!-- <a href="child?child={children.indexOf(activeChild)}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Explore</a> -->
-          <a href="/" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Explore</a>
+          <!-- <a href="child?child={children.indexOf(activeChild)}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Entdecken</a> -->
+          <a rel="external" href="{activeChild.path}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Entdecken</a>
         </div>
         <div class="col-span-7 h-full overflow-hidden">
           <Preload src="API_URL/attachments/{activeChild.content.images?.[0]}?w=600" let:src>
@@ -71,7 +71,7 @@
                 {child.content.description}
               </p>
             </div>
-            <a href="child?child={index}" class="button mb-8 bordered dark">Explore</a>
+            <a rel="external" href={child.path} class="button mb-8 bordered dark">Entdecken</a>
           </div>
         </div>  
       {/if}

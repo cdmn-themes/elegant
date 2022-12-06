@@ -16,6 +16,7 @@
   "pages": {
     "overview": {
       "title": "string",
+      "tagline": "string",
       "description": "string",
       "images": "images"
     },

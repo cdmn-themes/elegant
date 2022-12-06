@@ -17,7 +17,6 @@
   
   afterNavigate(function() {
     transitioning = false
-    console.log('bla')
   })
   
 
@@ -29,14 +28,15 @@
       ev.preventDefault()
       if (transitioning) return
       transitioning = true
+      
       setTimeout(function() {
-        console.log(href)
-        // if (href.includes(document.location.host)) goto(href)
-        // else {
-          // window.location = href
+        
+        if (href.includes(document.location.host)) goto(href)
+        else {
+          window.location = href
           transitioning = false
           scrollY = 0
-        // }
+        }
       }, 900)
     }
   }
@@ -86,11 +86,11 @@
   <div class="burger p-5 md:p-8 absolute">
     <Burger {open} on:click={() => open = !open}/>
   </div>
-  <a href="" class="brand">
+  <a href="/" rel="external" class="brand">
     <img src="API_URL/attachments/{data.site.content.logo}?raw" alt="" class="p-4 h-16 md:p-8 md:h-26">
   </a>
   <a class="button bordered right-4 top-4 md:right-7 md:top-7 absolute" on:click={() => formOpen = true}>
-    CONTACT
+    KONTAKT
   </a>
 </nav>
 
