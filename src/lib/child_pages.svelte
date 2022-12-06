@@ -36,11 +36,11 @@
           <!-- <a href="child?child={children.indexOf(activeChild)}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Entdecken</a> -->
           <a rel="external" href="{activeChild.path}" class="button bordered dark w-50%" in:fly|local={{y: 40, duration: 1600, delay: 400}}>Entdecken</a>
         </div>
-        <div class="col-span-7 h-full overflow-hidden">
-          <Preload src="API_URL/attachments/{activeChild.content.images?.[0]}?w=600" let:src>
+        <a rel="external" href="{activeChild.path}" class="col-span-7 h-full overflow-hidden">
+          <Preload src="API_URL/attachments/{activeChild.content.images?.[0]}?w=900" let:src>
             <img in:fly|local={{x: 40, duration: 1600}} {src} alt={activeChild.content.title} class="object-cover w-full h-full">  
           </Preload>
-        </div>
+        </a>
       </div>  
     {/each}
   {/if}
