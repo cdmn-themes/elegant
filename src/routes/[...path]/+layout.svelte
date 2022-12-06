@@ -54,8 +54,8 @@
 {#if formOpen}
 <div transition:fade={{duration:600}} class="fixed backdrop-blur w-full h-screen bg-white/50 z-2000"/>
 <main id="content" role="main" class=" fixed h-full w-full flex items-center justify-center z-2000"  on:click|self={() => formOpen = false}>
-  <div transition:slide={{duration:600}}  class="mt-7 bg-#f8f6f7 shadow-lg dark:bg-gray-800 dark:border-gray-700">
-    <div class="p-12 md:px-24">
+  <div transition:slide={{duration:600}}  class="mt-7 shadow-lg dark:bg-gray-800 border-white/50 border-12">
+    <div class="p-12 md:px-24 bg-#f8f6f7 ">
       <div class="text-center">
         <img src="API_URL/attachments/{data.site.content.logo}?raw" alt="{data.site.content.title}" class="w-30 mb-5" />
         <!-- <h1 class="block text-2xl font-bold text-gray-800 dark:text-white">Join the Tide</h1> -->
