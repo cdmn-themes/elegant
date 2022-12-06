@@ -1,19 +1,19 @@
 <script>
   import { fly } from 'svelte/transition'
-  import ChildPages from '$lib/child_pages.svelte';
-    import Scrolltool from '../../lib/scrolltool.svelte';
-    import { onMount } from 'svelte';
+  import ChildPages from '$lib/child_pages.svelte'
+  import Scrolltool from '../../lib/scrolltool.svelte'
 
   export let data
+
   let mapShown = false
   let fullvid = false
   
   function full() {
-    const vid = document.getElementsByTagName('video')[0];
+    const vid = document.getElementsByTagName('video')[0]
     fullvid = true
     if (vid) {
-      // vid.src = `API_URL/attachments/${full_vid}?raw`;
-      vid?.requestFullscreen();
+      vid.src = `API_URL/attachments/${data.content.video}?raw`
+      vid?.requestFullscreen()
       vid && (vid.muted = false)
       vid.loop = false
     }
@@ -67,7 +67,7 @@
     document.exitFullscreen()
     vid.loop = true
     vid.muted = true
-    // vid.src = `API_URL/attachments/${data.content.full_video}?raw`;
+    // vid.src = `API_URL/attachments/${data.content.video}?raw`;
   }
   let scrollY
 </script>
