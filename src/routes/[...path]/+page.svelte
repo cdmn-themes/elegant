@@ -71,8 +71,8 @@
 
   {#key data.content}
     <div class="relative h-screen w-full">
-      <video style:top="{scrollY/2}px"  style:scale={1 + scrollY/4000} on:ended={reset} poster="API_URL/attachments/{data.content.images?.[0] || data.content.full_video}?h=1000" class="object-cover h-screen w-full absolute bg-dark" preload="auto" playsinline="" autoplay="autoplay" muted loop="loop" >
-        <source type="video/mp4" src="API_URL/attachments/{data.content.images?.[0] || data.content.full_video}?raw">
+      <video style:top="{scrollY/2}px"  style:scale={1 + scrollY/4000} on:ended={reset} poster="API_URL/attachments/{data.content.images?.[0] || data.content.video}?h=1000" class="object-cover h-screen w-full absolute bg-dark" preload="auto" playsinline="" autoplay="autoplay" muted loop="loop" >
+        <source type="video/mp4" src="API_URL/attachments/{data.content.images?.[0] || data.content.video}?raw">
       </video>
       <div class="absolute bottom-0 w-full h-3 bg-light/70"></div>
       <div class="relative w-full h-full" >
@@ -96,9 +96,12 @@
       <div class="px-2 text-size-10 md:text-size-18" in:fly={{y: 30, duration: 1600, delay: 400}}>
         {data.content.title || data.site.content.title || ''}
       </div>
-      <a on:click={full} class="button mt-12 bordered" in:fly={{y: 30, duration: 1600, delay: 600}}>
-        <span class="i-clarity-volume-up-line text-size-6 align-middle relative -pb-3px -top-2px h-6"></span> Play full video
-      </a>
+      {#if data.content.video}
+        
+        <a on:click={full} class="button mt-12 bordered" in:fly={{y: 30, duration: 1600, delay: 600}}>
+          <span class="i-material-symbols:play-arrow text-size-6 align-middle relative -pb-3px -top-2px h-6"></span> Video abspielen
+        </a>
+      {/if}
     {/key}
   {:else}
   
