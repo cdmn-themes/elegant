@@ -5,7 +5,7 @@
     import { onMount } from 'svelte';
 
   export let data
-
+  let mapShown = false
   let fullvid = false
   
   function full() {
@@ -19,22 +19,27 @@
     }
   }
 
-  onMount(function() {
+  function showMap() {
     
-					
-    if (!data.content.geo_location) return
+	  mapShown = true
+    // if (!data.content.geo_location) return
 
     var address = '53.575733, 9.997154';
   
     var map = new google.maps.Map(document.getElementById('ut_google_map_6386cc43e8131'), {
       
-      zoom:14									
+      zoom:17,
+      // perspective
+      tilt:45,
+      
+      mapTypeId: 'satellite'
+
     });
   
     var geocoder = new google.maps.Geocoder();
   
     geocoder.geocode({
-      'address': data.content.geo_location
+      'address': address
     }, 
     function( results, status ) {
 
@@ -46,6 +51,7 @@
         });
 
         map.setCenter(results[0].geometry.location);
+        
 
       }
       
@@ -53,7 +59,7 @@
     
               
       
-  })
+  }
 
   function reset() {
     fullvid = false
@@ -145,13 +151,16 @@
   </section>
 
 
-  <section>
-    <img src="https://cms.cdmn.de/api/attachments/595" alt="" class="w-full">
+  <section class="w-full aspect-video relative">
+    <div id="ut_google_map_6386cc43e8131" class="absolute w-full h-full"></div>
+    {#if !mapShown}
+      <img src="https://cms.cdmn.de/api/attachments/595" alt="" class="w-full h-full object-center object-cover">
+      <button class="button bordered !bg-white !text-black right-4 top-4 md:right-7 md:top-7 absolute" on:click={showMap}>
+        LAGEPLAN
+      </button>
+      {/if}
   </section>
 
-{#if data.content.geo_location}
-  <section id="ut_google_map_6386cc43e8131" class="h-160"></section>
-{/if}
 
 <section class="container mx-auto mt-32">
   <div class="mt-20 text-center">
