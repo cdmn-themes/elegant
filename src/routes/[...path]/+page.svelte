@@ -7,12 +7,12 @@
   export let data
 
   let fullvid = false
-  let full_vid = data.content.full_video
+  
   function full() {
     const vid = document.getElementsByTagName('video')[0];
     fullvid = true
     if (vid) {
-      vid.src = `API_URL/attachments/${full_vid}?raw`;
+      // vid.src = `API_URL/attachments/${full_vid}?raw`;
       vid?.requestFullscreen();
       vid && (vid.muted = false)
       vid.loop = false
@@ -60,7 +60,8 @@
     const vid = document.getElementsByTagName('video')[0];
     document.exitFullscreen()
     vid.loop = true
-    vid.src = `API_URL/attachments/${data.content.full_video}?raw`;
+    vid.muted = true
+    // vid.src = `API_URL/attachments/${data.content.full_video}?raw`;
   }
   let scrollY
 </script>
@@ -106,7 +107,7 @@
   {:else}
   
     <a on:click={reset} class="button mt-12 bordered fixed bottom-4 right-4" in:fly={{x: 40, duration: 600}}>
-      <span class="i-clarity-volume-mute-line text-size-6 align-middle relative -pb-3px -top-2px h-6"></span> 
+      <span class="i-ion:volume-mute-sharp text-size-6 align-middle relative -pb-3px -top-2px h-6"></span> 
     </a>
   {/if}
 </section>
