@@ -7,12 +7,13 @@
   export let data
 
   let fullvid = false
+  let full_vid = data.content.full_video
   function full() {
     const vid = document.getElementsByTagName('video')[0];
     fullvid = true
     if (vid) {
-      vid.src = `API_URL/attachments/${data.full_video}?raw`;
-      // vid?.requestFullscreen();
+      vid.src = `API_URL/attachments/${full_vid}?raw`;
+      vid?.requestFullscreen();
       vid && (vid.muted = false)
       vid.loop = false
     }
@@ -59,7 +60,7 @@
     const vid = document.getElementsByTagName('video')[0];
     document.exitFullscreen()
     vid.loop = true
-    vid.src = `API_URL/attachments/${data.video}?raw`;
+    vid.src = `API_URL/attachments/${data.content.full_video}?raw`;
   }
   let scrollY
 </script>
@@ -70,8 +71,8 @@
 
   {#key data.content}
     <div class="relative h-screen w-full">
-      <video style:top="{scrollY/2}px"  style:scale={1 + scrollY/4000} on:ended={reset} poster="API_URL/attachments/{data.content.images?.[0] || data.site.content.video}?raw" class="object-cover h-screen w-full absolute bg-dark" preload="auto" playsinline="" autoplay="autoplay" muted loop="loop" >
-        <source type="video/mp4" src="API_URL/attachments/{data.content.images?.[0]|| data.site.content.video}?raw">
+      <video style:top="{scrollY/2}px"  style:scale={1 + scrollY/4000} on:ended={reset} poster="API_URL/attachments/{data.content.images?.[0] || data.content.full_video}?h=1000" class="object-cover h-screen w-full absolute bg-dark" preload="auto" playsinline="" autoplay="autoplay" muted loop="loop" >
+        <source type="video/mp4" src="API_URL/attachments/{data.content.images?.[0] || data.content.full_video}?raw">
       </video>
       <div class="absolute bottom-0 w-full h-3 bg-light/70"></div>
       <div class="relative w-full h-full" >

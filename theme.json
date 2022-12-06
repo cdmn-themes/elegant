@@ -18,7 +18,8 @@
       "title": "string",
       "tagline": "string",
       "description": "string",
-      "images": "images"
+      "images": "images",
+      "video": "video"
     },
     "project": {
       "title": "string",
